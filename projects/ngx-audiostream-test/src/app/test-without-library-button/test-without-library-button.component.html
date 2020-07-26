@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Test without library button</h1>
+  <button (click)="toggleRecording()">
+    <span *ngIf="!isRecording">Start recording</span>
+    <span *ngIf="isRecording">Stop recording</span>
+  </button>
+  <p>{{ this.lastLog }}</p>  
+</div>

@@ -1,0 +1,44 @@
+#rec-button {
+  position: relative;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#rec-button:active {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+#rec-button.big {
+  height: 50px;
+  width: 50px;
+}
+
+#microphone {
+  position: absolute;
+  background: url('assets/microphone.png');
+  background-repeat: no-repeat;
+}
+
+#microphone.big {
+  top: 7px;
+  left: 7px;
+  height: 36px;
+  width: 36px;
+  background-size: 36px 36px;
+}
+
+#red-dot {
+  position: absolute;
+  background: url('assets/red-dot.gif');
+  background-repeat: no-repeat;
+}
+
+#red-dot.big {
+  top: 28px;
+  left: 32px;
+  height: 15px;
+  width: 15px;
+  background-size: 15px 15px;
+}

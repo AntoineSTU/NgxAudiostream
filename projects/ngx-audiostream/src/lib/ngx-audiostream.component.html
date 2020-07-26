@@ -1,0 +1,4 @@
+<button id="rec-button" class="big" (click)="toggleRecording()" [disabled]="userCanToggle">
+  <div id="microphone" class="big"></div>
+  <div *ngIf="isRecording" id="red-dot" class="big"></div>
+</button>

@@ -1,0 +1,148 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-audiostream": {
+      "projectType": "library",
+      "root": "projects/ngx-audiostream",
+      "sourceRoot": "projects/ngx-audiostream/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-audiostream/tsconfig.lib.json",
+            "project": "projects/ngx-audiostream/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-audiostream/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-audiostream/src/test.ts",
+            "tsConfig": "projects/ngx-audiostream/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-audiostream/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["projects/ngx-audiostream/tsconfig.lib.json", "projects/ngx-audiostream/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "ngx-audiostream-test": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/ngx-audiostream-test",
+      "sourceRoot": "projects/ngx-audiostream-test/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ngx-audiostream-test",
+            "index": "projects/ngx-audiostream-test/src/index.html",
+            "main": "projects/ngx-audiostream-test/src/main.ts",
+            "polyfills": "projects/ngx-audiostream-test/src/polyfills.ts",
+            "tsConfig": "projects/ngx-audiostream-test/tsconfig.app.json",
+            "aot": true,
+            "assets": ["projects/ngx-audiostream-test/src/favicon.ico", "projects/ngx-audiostream-test/src/assets"],
+            "styles": ["projects/ngx-audiostream-test/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-audiostream-test/src/environments/environment.ts",
+                  "with": "projects/ngx-audiostream-test/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngx-audiostream-test:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-audiostream-test:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-audiostream-test:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-audiostream-test/src/test.ts",
+            "polyfills": "projects/ngx-audiostream-test/src/polyfills.ts",
+            "tsConfig": "projects/ngx-audiostream-test/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-audiostream-test/karma.conf.js",
+            "assets": ["projects/ngx-audiostream-test/src/favicon.ico", "projects/ngx-audiostream-test/src/assets"],
+            "styles": ["projects/ngx-audiostream-test/src/styles.css"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-audiostream-test/tsconfig.app.json",
+              "projects/ngx-audiostream-test/tsconfig.spec.json",
+              "projects/ngx-audiostream-test/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ngx-audiostream-test/e2e/protractor.conf.js",
+            "devServerTarget": "ngx-audiostream-test:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-audiostream-test:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-audiostream"
+}

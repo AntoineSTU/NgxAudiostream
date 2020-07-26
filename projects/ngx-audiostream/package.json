@@ -1,0 +1,36 @@
+{
+  "name": "ngx-audiostream",
+  "version": "1.0.0",
+  "description": "This angular library helps you recording someone and put the output audio into a Google Speech-to-text compatible format.",
+  "author": {
+    "name": "Antoine STUTZ",
+    "email": "stutz.antoine@orange.fr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AntoineSTU/NgxAudiostream.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AntoineSTU/NgxAudiostream/issues"
+  },
+  "homepage": "https://github.com/AntoineSTU/NgxAudiostream#readme",
+  "keywords": [
+    "ngx",
+    "angular",
+    "javascript",
+    "typescript",
+    "audio",
+    "microphone",
+    "google",
+    "speech-to-text",
+    "recording"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^9.1.11",
+    "@angular/core": "^9.1.11"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
+  }
+}

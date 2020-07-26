@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Test with library button</h1>
+  <ngx-audiostream
+    [userCanToggle]="false"
+    [directlyStartRecording]="false"
+    (audioEmitter)="processMessage($event)"
+  ></ngx-audiostream>
+  <h4>Last log:</h4>
+  <p>{{ lastLog }}</p>
+</div>
